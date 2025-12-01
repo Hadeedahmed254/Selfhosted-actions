@@ -30,6 +30,8 @@ HTTPS (port 443) → Source: Anywhere (0.0.0.0/0)
 ### To make sure your workflows in .github/workflows run on your self-hosted runner, you need to configure both the self-hosted runner and the workflow YAML properly.
 
 <img width="260" height="87" alt="image" src="https://github.com/user-attachments/assets/644f030b-861d-407e-8cad-a5aeeccea610" />
+
+
 # Add a Self-Hosted Runner to Your Repository
 Go to your repository on GitHub → Settings → Actions → Runners → Add runner.
 
