@@ -1,0 +1,40 @@
+name: Hadeed First Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Hadeed First Pipeline
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9]
+
+    steps:
+      # Step 1: Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Setup Python
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # Step 3: Upgrade pip
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      # Step 4: Install pytest
+      - name: Install pytest
+        run: pip install pytest
+
+      # Step 5: Run tests in addition.py
+      - name: Run tests
+        run: pytest src/addition.py
+
